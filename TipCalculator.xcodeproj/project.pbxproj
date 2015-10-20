@@ -12,6 +12,7 @@
 		8DC7A17C1BD6C7D300F8BC50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC7A17A1BD6C7D300F8BC50 /* Main.storyboard */; };
 		8DC7A17E1BD6C7D300F8BC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DC7A17D1BD6C7D300F8BC50 /* Assets.xcassets */; };
 		8DC7A1811BD6C7D300F8BC50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DC7A17F1BD6C7D300F8BC50 /* LaunchScreen.storyboard */; };
+		8DC7A1891BD6CA7F00F8BC50 /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC7A1881BD6CA7F00F8BC50 /* TipCalculatorModel.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		8DC7A17D1BD6C7D300F8BC50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DC7A1801BD6C7D300F8BC50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DC7A1821BD6C7D300F8BC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC7A1881BD6CA7F00F8BC50 /* TipCalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		8DC7A1751BD6C7D300F8BC50 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				8DC7A1881BD6CA7F00F8BC50 /* TipCalculatorModel.swift */,
 				8DC7A1761BD6C7D300F8BC50 /* AppDelegate.swift */,
 				8DC7A1781BD6C7D300F8BC50 /* ViewController.swift */,
 				8DC7A17A1BD6C7D300F8BC50 /* Main.storyboard */,
@@ -134,6 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DC7A1891BD6CA7F00F8BC50 /* TipCalculatorModel.swift in Sources */,
 				8DC7A1791BD6C7D300F8BC50 /* ViewController.swift in Sources */,
 				8DC7A1771BD6C7D300F8BC50 /* AppDelegate.swift in Sources */,
 			);
