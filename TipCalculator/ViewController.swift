@@ -24,12 +24,16 @@ class ViewController: UIViewController {
         let possibleTips = tipCalc.returnPossibleTips()
         var results = ""
         
-        // Enumerate through both keys and values of dictionary
-        // Then build a string and add to the results text field
-        for (tipPct, tipValue) in possibleTips {
-            results += "\(tipPct)%: \(tipValue)\n"
+        // Sort the results by tip percentage
+        // Build a string and add to the results text field
+        var keys = Array(possibleTips.keys)
+        keys.sortInPlace()
+        for tipPct in keys {
+            let tipValue = possibleTips[tipPct]!
+            let prettyTipValue = String(format: "%0.2f", tipValue)
+            results += "\(tipPct)%: \(prettyTipValue)\n"
         }
-        
+
         // Set the results text to the string
         resultsTextView.text = results
     }
