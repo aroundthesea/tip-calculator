@@ -20,7 +20,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Total (Post-Tax):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7Z-6G-RN8">
                                 <rect key="frame" x="33" y="81" width="152" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="152" id="hpC-Xu-uTB"/>
+                                    <constraint firstAttribute="width" constant="152" id="NEs-iF-2Hy"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -43,45 +43,49 @@
                                     <action selector="taxPercentageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="cpw-2a-tQF"/>
                                 </connections>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvs-Er-sMU">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cvs-Er-sMU">
                                 <rect key="frame" x="268" y="154" width="64" height="30"/>
                                 <state key="normal" title="Calculate"/>
                                 <connections>
                                     <action selector="calculateTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1EB-2W-pF2"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TSS-rM-5DF">
-                                <rect key="frame" x="16" y="192" width="568" height="400"/>
-                                <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="WxT-Df-FTG" appends="YES" id="Cxq-Ku-fmL"/>
-                                </connections>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sPo-Pq-ezE">
+                                <rect key="frame" x="0.0" y="192" width="600" height="408"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="49E-zt-S1r">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="408"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sn2-nc-j19">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="408"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="SeH-Il-Ua3"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="hjf-Je-JOZ"/>
+                                                </connections>
+                                            </tableView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="NT4-A6-FBk" firstAttribute="trailing" secondItem="4sh-pM-lie" secondAttribute="trailing" id="0Oo-9f-Y7O"/>
-                            <constraint firstItem="TSS-rM-5DF" firstAttribute="trailing" secondItem="NT4-A6-FBk" secondAttribute="trailing" id="56y-So-W0u"/>
-                            <constraint firstItem="TSS-rM-5DF" firstAttribute="top" secondItem="Cvs-Er-sMU" secondAttribute="bottom" constant="8" symbolic="YES" id="73x-tA-Mkr"/>
-                            <constraint firstItem="TSS-rM-5DF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ATN-Gk-JV7"/>
-                            <constraint firstItem="Qj2-Aa-TFH" firstAttribute="top" secondItem="n7Z-6G-RN8" secondAttribute="bottom" constant="18" id="DCe-bd-6y4"/>
-                            <constraint firstItem="TSS-rM-5DF" firstAttribute="centerX" secondItem="Cvs-Er-sMU" secondAttribute="centerX" id="Gva-OR-Wcy"/>
-                            <constraint firstItem="4sh-pM-lie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="Gwb-FE-PXy"/>
-                            <constraint firstItem="NT4-A6-FBk" firstAttribute="leading" secondItem="Qj2-Aa-TFH" secondAttribute="trailing" constant="6" id="Hty-gF-MF5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="TSS-rM-5DF" secondAttribute="bottom" constant="8" symbolic="YES" id="cTf-FD-oJx"/>
-                            <constraint firstItem="n7Z-6G-RN8" firstAttribute="centerY" secondItem="4sh-pM-lie" secondAttribute="centerY" id="eIz-DR-flU"/>
-                            <constraint firstItem="NT4-A6-FBk" firstAttribute="top" secondItem="4sh-pM-lie" secondAttribute="bottom" constant="9" id="esH-Xy-ips"/>
-                            <constraint firstItem="Qj2-Aa-TFH" firstAttribute="centerY" secondItem="NT4-A6-FBk" secondAttribute="centerY" id="nMj-iY-IvB"/>
-                            <constraint firstItem="Cvs-Er-sMU" firstAttribute="top" secondItem="NT4-A6-FBk" secondAttribute="bottom" constant="8" symbolic="YES" id="pXe-hB-GQ3"/>
-                            <constraint firstItem="n7Z-6G-RN8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="q00-ya-Je9"/>
-                            <constraint firstItem="4sh-pM-lie" firstAttribute="leading" secondItem="NT4-A6-FBk" secondAttribute="leading" id="sjt-U3-tr5"/>
-                            <constraint firstItem="Qj2-Aa-TFH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="uZQ-Vq-737"/>
-                            <constraint firstItem="TSS-rM-5DF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="vhY-WL-kxY"/>
-                            <constraint firstItem="4sh-pM-lie" firstAttribute="leading" secondItem="n7Z-6G-RN8" secondAttribute="trailing" constant="7" id="wPv-YU-hYZ"/>
-                            <constraint firstItem="n7Z-6G-RN8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="zFm-Sr-ae6"/>
+                            <constraint firstItem="Qj2-Aa-TFH" firstAttribute="top" secondItem="n7Z-6G-RN8" secondAttribute="bottom" constant="18" id="AW9-54-awB"/>
+                            <constraint firstItem="4sh-pM-lie" firstAttribute="leading" secondItem="NT4-A6-FBk" secondAttribute="leading" id="FvQ-aQ-Bk6"/>
+                            <constraint firstItem="n7Z-6G-RN8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="LB0-Mo-NO4"/>
+                            <constraint firstItem="Qj2-Aa-TFH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="Ok0-hG-tvp"/>
+                            <constraint firstItem="n7Z-6G-RN8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="R82-CR-wfT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4sh-pM-lie" secondAttribute="trailing" constant="-4" id="YQP-kN-IvX"/>
+                            <constraint firstItem="4sh-pM-lie" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="13" id="ZSp-Q9-wzH"/>
+                            <constraint firstItem="NT4-A6-FBk" firstAttribute="leading" secondItem="Qj2-Aa-TFH" secondAttribute="trailing" constant="6" id="d9B-Po-lg1"/>
+                            <constraint firstItem="NT4-A6-FBk" firstAttribute="centerY" secondItem="Qj2-Aa-TFH" secondAttribute="centerY" id="gF7-dr-jfS"/>
+                            <constraint firstItem="n7Z-6G-RN8" firstAttribute="centerY" secondItem="4sh-pM-lie" secondAttribute="centerY" id="moW-4T-BS8"/>
+                            <constraint firstItem="Cvs-Er-sMU" firstAttribute="top" secondItem="NT4-A6-FBk" secondAttribute="bottom" constant="8" symbolic="YES" id="pUj-Kv-n92"/>
+                            <constraint firstItem="4sh-pM-lie" firstAttribute="trailing" secondItem="NT4-A6-FBk" secondAttribute="trailing" id="tib-Zc-mjR"/>
+                            <constraint firstItem="4sh-pM-lie" firstAttribute="leading" secondItem="n7Z-6G-RN8" secondAttribute="trailing" constant="7" id="wOz-Ha-MQc"/>
+                            <constraint firstItem="NT4-A6-FBk" firstAttribute="top" secondItem="4sh-pM-lie" secondAttribute="bottom" constant="9" id="zhr-Le-3NI"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="WxT-Df-FTG" appends="YES" id="7qd-JD-h6H"/>
@@ -91,7 +95,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Tip Calculator" id="8t8-Wr-m15" userLabel="Tip Calculator"/>
                     <connections>
-                        <outlet property="resultsTextView" destination="TSS-rM-5DF" id="YbC-0j-N54"/>
+                        <outlet property="tableView" destination="sn2-nc-j19" id="0ZL-dO-DqP"/>
                         <outlet property="taxPctLabel" destination="Qj2-Aa-TFH" id="IW8-1e-34H"/>
                         <outlet property="taxPctSlider" destination="NT4-A6-FBk" id="1yT-XT-TuB"/>
                         <outlet property="totalTextField" destination="4sh-pM-lie" id="M89-L8-7Lp"/>
